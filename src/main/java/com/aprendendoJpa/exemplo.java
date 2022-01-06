@@ -25,10 +25,17 @@ public class exemplo {
         entityManager.getTransaction().commit();*/
 
         //Como Remover um objeto do banco
-        Cliente cliente = entityManager.find(Cliente.class,1);
+        /*Cliente cliente = entityManager.find(Cliente.class,1);
 
         entityManager.getTransaction().begin();
         entityManager.remove(cliente);
+        entityManager.getTransaction().commit();*/
+
+        //Como fazer alteração
+        Cliente cliente = entityManager.find(Cliente.class,2);
+
+        entityManager.getTransaction().begin();
+        cliente.setNome("João victor");
         entityManager.getTransaction().commit();
 
         entityManager.close();
